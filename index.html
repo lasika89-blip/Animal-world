@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal World - Discover the Wild</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1a1a1a',
+                        accent: '#e63946',
+                        'accent-hover': '#d62828',
+                        'glass-bg': 'rgba(255, 255, 255, 0.1)',
+                        'glass-border': 'rgba(255, 255, 255, 0.2)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-primary text-white overflow-x-hidden antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold italic tracking-wider text-white">Animal World</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-sm font-semibold tracking-widest hover:text-accent transition-colors uppercase border-b-2 border-transparent hover:border-accent pb-1">Home</a>
+                <a href="gallery.html" class="text-sm font-semibold tracking-widest hover:text-accent transition-colors uppercase border-b-2 border-transparent hover:border-accent pb-1">Gallery</a>
+                <a href="about.html" class="text-sm font-semibold tracking-widest hover:text-accent transition-colors uppercase border-b-2 border-transparent hover:border-accent pb-1">About</a>
+                <a href="contact.html" class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-primary transition-all duration-300 font-semibold text-sm uppercase tracking-widest">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-btn">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 bg-primary bg-opacity-95 z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8" id="mobile-menu">
+            <button class="absolute top-6 right-6 text-white" id="close-menu-btn">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="index.html" class="text-2xl font-serif hover:text-accent">Home</a>
+            <a href="gallery.html" class="text-2xl font-serif hover:text-accent">Gallery</a>
+            <a href="about.html" class="text-2xl font-serif hover:text-accent">About</a>
+            <a href="contact.html" class="text-2xl font-serif hover:text-accent">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=2072&auto=format&fit=crop" alt="Wild Fox" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-primary"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <p class="text-accent text-lg md:text-xl font-semibold tracking-[0.2em] mb-4 animate-slide-up" style="animation-delay: 0.2s;">DISCOVER THE UNTAMED</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-shadow animate-slide-up leading-tight" style="animation-delay: 0.4s;">
+                Welcome to <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Animal World</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto font-light leading-relaxed animate-slide-up" style="animation-delay: 0.6s;">
+                Explore the beauty, power, and mystery of the animal kingdom. A journey into the wild awaits you.
+            </p>
+            <div class="animate-slide-up" style="animation-delay: 0.8s;">
+                <a href="gallery.html" class="inline-block px-8 py-4 bg-accent hover:bg-accent-hover text-white rounded-full font-semibold tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg shadow-accent/30">
+                    View Gallery
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Featured Section -->
+    <section class="py-20 px-6 bg-primary">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-accent text-sm font-bold tracking-widest uppercase">Categories</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mt-2">Explore Wildlife</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative overflow-hidden rounded-2xl h-96 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1546182990-dced7187dad3?q=80&w=2072&auto=format&fit=crop" alt="Lion" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Predators</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Kings of the jungle, masters of the hunt.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative overflow-hidden rounded-2xl h-96 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?q=80&w=1974&auto=format&fit=crop" alt="Parrot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Avian</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Colorful skies and melodic songs.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative overflow-hidden rounded-2xl h-96 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1582967788606-a171f1080ca8?q=80&w=2072&auto=format&fit=crop" alt="Turtle" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-serif font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Marine Life</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Mysteries of the deep blue ocean.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section with Parallax feeling -->
+    <section class="relative py-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2068&auto=format&fit=crop" alt="Elephant" class="w-full h-full object-cover opacity-20 fixed-bg">
+             <div class="absolute inset-0 bg-primary/80"></div>
+        </div>
+        
+        <div class="container mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?q=80&w=2072&auto=format&fit=crop" alt="Panda" class="rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+            </div>
+            <div class="text-left">
+                <span class="text-accent font-bold tracking-widest uppercase">Conservation</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mt-4 mb-6">Protecting the Vulnerable</h2>
+                <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                    Our mission is to bring awareness to the diverse species that inhabit our planet. From the dense rainforests to the frozen tundras, every creature plays a vital role in our ecosystem. Join us in celebrating and protecting them.
+                </p>
+                <a href="about.html" class="inline-flex items-center text-accent font-semibold hover:text-white transition-colors group">
+                    Read Our Story 
+                    <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-serif font-bold italic text-white mb-2">Animal World</h3>
+                    <p class="text-gray-500 text-sm">© 2024 Animal World. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors"><span class="sr-only">Facebook</span>FB</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors"><span class="sr-only">Twitter</span>TW</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors"><span class="sr-only">Instagram</span>IG</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

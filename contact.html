@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Animal World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1a1a1a',
+                        accent: '#e63946',
+                        'accent-hover': '#d62828',
+                        'glass-bg': 'rgba(255, 255, 255, 0.1)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-primary text-white overflow-x-hidden antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-primary/90 backdrop-blur-md border-b border-gray-800"
+        id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-serif font-bold italic tracking-wider text-white">Animal World</a>
+
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html"
+                    class="text-sm font-semibold tracking-widest hover:text-accent transition-colors uppercase border-b-2 border-transparent hover:border-accent pb-1">Home</a>
+                <a href="gallery.html"
+                    class="text-sm font-semibold tracking-widest hover:text-accent transition-colors uppercase border-b-2 border-transparent hover:border-accent pb-1">Gallery</a>
+                <a href="about.html"
+                    class="text-sm font-semibold tracking-widest hover:text-accent transition-colors uppercase border-b-2 border-transparent hover:border-accent pb-1">About</a>
+                <a href="contact.html"
+                    class="px-6 py-2 border border-accent bg-accent text-white rounded-full hover:bg-accent-hover transition-all duration-300 font-semibold text-sm uppercase tracking-widest shadow-lg shadow-accent/20">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-btn">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 bg-primary bg-opacity-95 z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8"
+            id="mobile-menu">
+            <button class="absolute top-6 right-6 text-white" id="close-menu-btn">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <a href="index.html" class="text-2xl font-serif hover:text-accent">Home</a>
+            <a href="gallery.html" class="text-2xl font-serif hover:text-accent">Gallery</a>
+            <a href="about.html" class="text-2xl font-serif hover:text-accent">About</a>
+            <a href="contact.html" class="text-2xl font-serif text-accent">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="pt-32 pb-24 px-6 container mx-auto flex flex-col items-center justify-center min-h-screen">
+
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4">Get in Touch</h1>
+            <p class="text-gray-400 max-w-xl mx-auto">Have questions or want to support our cause? We'd love to hear
+                from you.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl">
+            <!-- Contact Info -->
+            <div class="space-y-8 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-accent mb-2">Our Office</h3>
+                    <p class="text-gray-300">123 Jungle Way, Safari City<br>Wildlife District, Earth</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-accent mb-2">Email Us</h3>
+                    <p class="text-gray-300 hover:text-white transition-colors cursor-pointer">hello@animalworld.com</p>
+                    <p class="text-gray-300 hover:text-white transition-colors cursor-pointer">support@animalworld.com
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-accent mb-2">Call Us</h3>
+                    <p class="text-gray-300 hover:text-white transition-colors cursor-pointer">+1 (555) 123-4567</p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="pt-8 flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors text-white">
+                        <span class="sr-only">Facebook</span>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors text-white">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors text-white">
+                        <span class="sr-only">Instagram</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message sent!');">
+                <div class="relative">
+                    <input type="text" id="name"
+                        class="peer w-full bg-transparent border-b border-gray-600 py-2 placeholder-transparent text-white focus:outline-none focus:border-accent transition-colors"
+                        placeholder="Name">
+                    <label for="name"
+                        class="absolute left-0 -top-3.5 text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-accent peer-focus:text-sm">Name</label>
+                </div>
+                <div class="relative">
+                    <input type="email" id="email"
+                        class="peer w-full bg-transparent border-b border-gray-600 py-2 placeholder-transparent text-white focus:outline-none focus:border-accent transition-colors"
+                        placeholder="Email">
+                    <label for="email"
+                        class="absolute left-0 -top-3.5 text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-accent peer-focus:text-sm">Email
+                        Address</label>
+                </div>
+                <div class="relative">
+                    <textarea id="message" rows="4"
+                        class="peer w-full bg-transparent border-b border-gray-600 py-2 placeholder-transparent text-white focus:outline-none focus:border-accent transition-colors resize-none"
+                        placeholder="Message"></textarea>
+                    <label for="message"
+                        class="absolute left-0 -top-3.5 text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-accent peer-focus:text-sm">Message</label>
+                </div>
+                <button type="submit"
+                    class="w-full bg-accent hover:bg-accent-hover text-white font-bold py-3 rounded-full uppercase tracking-widest transition-all shadow-lg hover:shadow-accent/40">
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer
+        class="bg-black py-8 border-t border-gray-800 text-center text-gray-500 text-sm absolute bottom-0 w-full hidden md:block">
+        <p>© 2024 Animal World. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
